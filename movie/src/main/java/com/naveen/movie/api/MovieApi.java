@@ -64,57 +64,96 @@ public class MovieApi {
 					int ind=line.indexOf(directedBy)+directedBy.length();
 					String s=service.findString(ss, ind);
 					System.out.println(s);
+					System.out.println("-----------------------------------------------------------------------");
 				}if(line.contains(produceBy)) {
 					int ind=line.indexOf(produceBy)+produceBy.length();
 					String s=service.findString(ss, ind);
 					System.out.println(s);
+					System.out.println("-----------------------------------------------------------------------");
 				}if(line.contains(writtenBy)) {
 					int ind=line.indexOf(writtenBy)+writtenBy.length();
 					String s=service.findString(ss, ind);
 					System.out.println(s);
-				}if(line.contains(starring)) {
+					System.out.println("-----------------------------------------------------------------------");
+				}
+				if(line.contains(starring)) {
 					int ind=line.indexOf(starring)+starring.length();
-					String s=service.findString(ss, ind);
-					System.out.println(s);
-				}if(line.contains(musicBy)) {
+					List<String> s=service.findStringList(ss, ind);
+					for(int i=0;i<s.size();i++) {
+						System.out.println(s.get(i));
+					}
+					System.out.println("-----------------------------------------------------------------------");
+				}
+				if(line.contains(musicBy)) {
 					int ind=line.indexOf(musicBy)+musicBy.length();
 					String s=service.findString(ss, ind);
 					System.out.println(s);
+					System.out.println("-----------------------------------------------------------------------");
 				}if(line.contains(cinematography)) {
 					int ind=line.indexOf(cinematography)+cinematography.length();
 					String s=service.findString(ss, ind);
 					System.out.println(s);
+					System.out.println("-----------------------------------------------------------------------");
 				}
 				if(line.contains(production)) {
 					int ind=line.indexOf(production)+production.length();
-					String s=service.findString(ss, ind);
-					System.out.println(s);
+					List<String> s=service.findStringList(ss, ind);
+					for(int i=0;i<s.size();i++) {
+						System.out.println(s.get(i));
+					}
+					System.out.println("-----------------------------------------------------------------------");
 				}if(line.contains(editedBy)) {
+					int ind=line.indexOf(editedBy)+editedBy.length();
+					String s=service.findString(ss, ind);
+					System.out.println(s);
+					System.out.println("-----------------------------------------------------------------------");
+				}
+				if(line.contains(distributedBy)) {
 					int ind=line.indexOf(distributedBy)+distributedBy.length();
-					String s=service.findString(ss, ind);
-					System.out.println(s);
-				}if(line.contains(companies)) {
+					List<String> s=service.findStringList(ss, ind);
+					for(int i=0;i<s.size();i++) {
+						System.out.println(s.get(i));
+					}
+					System.out.println("-----------------------------------------------------------------------");
+				}
+					if(line.contains(companies)) {
 					int ind=line.indexOf(companies)+companies.length();
-					String s=service.findString(ss, ind);
-					System.out.println(s);
+					List<String> s=service.findStringList(ss, ind);
+					for(int i=0;i<s.size();i++) {
+						System.out.println(s.get(i));
+					}
+					System.out.println("-----------------------------------------------------------------------");
 				}if(line.contains(releaseDate)) {
 					int ind=line.indexOf(releaseDate)+releaseDate.length();
 					String s=service.findString(ss, ind);
 					System.out.println(s);
-				}if(line.contains(country)) {
-					int ind=line.indexOf(country)+country.length();
+					System.out.println("-----------------------------------------------------------------------");
+				}
+				if(line.contains(runningTime)) {
+					int ind=line.indexOf(runningTime)+runningTime.length();
 					String s=service.findString(ss, ind);
 					System.out.println(s);
+					System.out.println("-----------------------------------------------------------------------");
+				}
+				if(line.contains(country)) {
+					int ind=line.indexOf(country)+country.length();
+					List<String> s=service.findStringList(ss, ind);
+					for(int i=0;i<s.size();i++) {
+						System.out.println(s.get(i).replaceAll("[^a-zA-Z]", ""));
+					}
+					System.out.println("-----------------------------------------------------------------------");
 				}
 				if(line.contains(language)) {
 					int ind=line.indexOf(language)+language.length();
 					String s=service.findString(ss, ind);
 					System.out.println(s);
+					System.out.println("-----------------------------------------------------------------------");
 				}
 				if(line.contains(budget)) {
 					int ind=line.indexOf(budget)+budget.length();
 					String s=service.findString(ss, ind);
 					System.out.println(s);
+					System.out.println("-----------------------------------------------------------------------");
 				}if(line.contains(boxOffice)) {
 					int ind=line.indexOf(boxOffice)+boxOffice.length();
 					String s=service.findString(ss, ind);

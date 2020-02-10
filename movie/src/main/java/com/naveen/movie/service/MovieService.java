@@ -72,5 +72,42 @@ public class MovieService {
 		}
 		return retn;
 	}
+	public List<String> findStringList(char ss[],int startInd){
+		List<String> lst=new ArrayList<String>();
+		String s="";
+		boolean f=true;
+		boolean f1=true;
+		//boolean f2=true;
+		for(int i=startInd;i<ss.length;i++) {
+			if(ss[i]=='<' && f1) {
+//				if(i!=ss.length-2 && ss[i+1]=='l' && ss[i+2]=='i') {
+//					f2=true;
+//				}
+				if(i!=ss.length-3 && ss[i+1]=='/' && ss[i+2]=='u' && ss[i+3]=='l') {
+					break;
+				}
+				f=false;
+				continue;
+			}else if(ss[i]=='>') {
+				f=true;
+			}else if(f) {
+				f1=false;
+				if(ss[i]=='\\' && ss[i+1]=='n') {
+					s="";
+					f1=true;
+					i+=1;
+				}
+				else if(ss[i]=='<') {
+					lst.add(s);
+					f1=true;
+					f=false;
+				}else {
+				s+=ss[i];
+				}
+				
+			}
+		}
+		return lst;
+	}
 
 }
